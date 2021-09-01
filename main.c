@@ -1,3 +1,18 @@
+/*
+ * Let the Arduino blink
+ *
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * Philipp Jaeger <philipp.jaeger@aeg-nb.de> wrote this file.  As long as you 
+ * retain this notice you can do whatever you want with this stuff. If we meet 
+ * some day, and you think this stuff is worth it, you can buy me a beer in 
+ * return.
+ *                                                              -Philipp Jaeger
+ * ----------------------------------------------------------------------------
+ */
+
+
+
 #include<avr/io.h>
 #include<util/delay.h>
 
