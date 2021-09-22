@@ -15,13 +15,13 @@ TARGET=main
 %.o: %.c
 	$(CC) $(CC_OPT) -o $@ $<
 
-
 all: $(SRC:%.c=%.o)
 	$(CC) -mmcu=$(MCU) $(LIBS) -o $(TARGET).elf $(SRC:%.c=%.o)
 	$(CP) -O ihex -R .eeprom $(TARGET).elf $(TARGET).hex
 
 flash: all
-	avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:$(TARGET).hex	
+	avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:$(TARGET).hex
+
 clean:
 	rm -f $(SRC:%.c=%.o) $(TARGET).elf $(TARGET).hex
 
