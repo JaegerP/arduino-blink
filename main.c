@@ -15,6 +15,7 @@
 
 #include<avr/io.h>
 #include<avr/interrupt.h>
+#include"blink.h"
 
 volatile uint8_t count = 0;
 
@@ -24,7 +25,7 @@ void set_timer_p1024_ms(uint16_t __t) {
 
 	// clear config registers
 	TCCR1A = 0x00;
-	TCCR1A = 0x00;
+	TCCR1B = 0x00;
 
 	// set CTC mode
 	//TCCR1A |= ((1 << COM1A1) | (1 << COM1A0));
@@ -39,9 +40,15 @@ void set_timer_p1024_ms(uint16_t __t) {
 	sei();
 }
 
+
+void set_pwn_output(portpin_t *pp, uint16_t clk, float ratio);
+
 int main (void) {
-	DDRB = 1 << DDB5;
-	set_timer_p1024_ms(2000);
+	portpin_t pp;
+	pp.pn = 'b';
+	pp.pin = PB5;
+	set_output_pin(&pp);
+	set_timer_p1024_ms(100);
 	while (1) {
 
 		if (count >= 1) {
@@ -53,5 +60,6 @@ int main (void) {
 }
 
 ISR(TIMER1_COMPA_vect) {
-	++count;
+	count++;
+
 }
