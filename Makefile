@@ -9,7 +9,7 @@ LIBS=
 
 CC_OPT=-Os -DF_CPU=$(CPU_FREQ) -mmcu=$(MCU) -c
 
-SRC=main.c
+SRC=main.c blink.c
 TARGET=main
 
 %.o: %.c
