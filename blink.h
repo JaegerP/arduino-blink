@@ -14,6 +14,16 @@ typedef struct portpin {
 
 
 void set_output_pin(portpin_t *pp);
+/**
+ * Initialize a pin as output
+ * @param pp: portpin struct
+ */
+
+void toggle_pin(portpin_t *pp);
+/**
+ * Toggle pin value
+ * @param pp: portpin struct
+ */
 
 void set_blink_frequency(portpin_t *pp, float __f);
 

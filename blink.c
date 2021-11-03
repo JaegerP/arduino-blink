@@ -25,4 +25,8 @@ void set_output_pin(portpin_t *pp) {
 
 }
 
+void toggle_pin(portpin_t *pp) {
+    pp->port ^= 1 << pp->pin;
+}
+
 void set_blink_frequency(portpin_t *pp, float __f);
