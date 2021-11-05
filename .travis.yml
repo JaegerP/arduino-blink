@@ -1,1 +1,2 @@
 # Empty CI script
+install: apt-get update && apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude 
