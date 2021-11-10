@@ -4,6 +4,6 @@ sudo: required
 before_install: 
   - sudo apt-get update && sudo apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude  
   
-compile:
+install:
   - avr-gcc --version
   - make all
