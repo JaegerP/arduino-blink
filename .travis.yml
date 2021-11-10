@@ -1,5 +1,6 @@
 ---
 sudo: required
+language: c
 
 before_install: 
   - sudo apt-get update && sudo apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude  
@@ -7,3 +8,6 @@ before_install:
 install:
   - avr-gcc --version
   - make all
+  
+script: 
+  - [ -e main.hex ]
