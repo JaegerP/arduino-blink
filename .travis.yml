@@ -10,4 +10,4 @@ install:
   - make all
   
 script: 
-  - [ -e main.hex ]
+  - find . -name main.hex
