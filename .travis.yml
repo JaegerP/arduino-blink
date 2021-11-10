@@ -1,2 +1,13 @@
-# Empty CI script
-install: apt-get update && apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude 
+---
+sudo: required
+language: c
+
+before_install: 
+  - sudo apt-get update && sudo apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude  
+  
+install:
+  - avr-gcc --version
+  - make all
+  
+script: 
+  - find . -name main.hex
