@@ -1,6 +1,8 @@
 ---
+sudo: required
+
 before_install: 
-  - apt-get update && apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude 
+  - sudo apt-get update && sudo apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude  
   
 compile:
   - avr-gcc --version
