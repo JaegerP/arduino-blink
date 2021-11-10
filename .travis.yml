@@ -1,2 +1,7 @@
-# Empty CI script
-install: apt-get update && apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude 
+---
+before_install: 
+  - apt-get update && apt-get -y install gcc-avr avr-libc binutils-avr gdb-avr avrdude 
+  
+compile:
+  - avr-gcc --version
+  - make all
